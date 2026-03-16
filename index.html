@@ -78,8 +78,8 @@ nav.scrolled {
   padding: 6rem 1.5rem 3rem;
 }
 .hero::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(30,143,255,0.07) 0%, transparent 70%);
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(to bottom, rgba(4,9,26,0.55) 0%, rgba(4,9,26,0.75) 60%, rgba(4,9,26,0.95) 100%);
 }
 .radar-svg { width: 320px; height: 320px; margin: 0 auto 2rem; opacity: 0.85; }
 @keyframes radar-sweep {
@@ -338,6 +338,7 @@ footer {
   <a href="#services" onclick="closeMobile()">Services</a>
   <a href="#clients" onclick="closeMobile()">Clients</a>
   <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#site-gallery" onclick="closeMobile()">Gallery</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
 
@@ -354,6 +355,7 @@ footer {
     <li><a href="#services">Services</a></li>
     <li><a href="#clients">Clients</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#site-gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -712,6 +714,49 @@ footer {
 </section>
 
 <!-- WHY CHOOSE SEW -->
+<!-- SITE GALLERY -->
+<section id="site-gallery" style="padding:100px 0; background:#04091a;">
+  <div style="max-width:1200px; margin:0 auto; padding:0 24px;">
+    <div style="text-align:center; margin-bottom:60px;" class="animate">
+      <span style="color:#1e8fff; font-family:'Rajdhani',sans-serif; font-size:13px; letter-spacing:4px; text-transform:uppercase;">Field Operations</span>
+      <h2 style="font-family:'Rajdhani',sans-serif; font-size:clamp(2rem,4vw,3rem); color:#f0f4ff; margin:12px 0 0; font-weight:700;">Projects Across Scope &amp; Terrains</h2>
+      <p style="color:#7a90b0; margin-top:16px; max-width:600px; margin-left:auto; margin-right:auto; font-size:1.05rem;">From high-altitude mountain deployments to naval vessel installations — real field operations across India's most demanding environments.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:24px;">
+      <div class="animate" style="position:relative; border-radius:12px; overflow:hidden; border:1px solid rgba(30,143,255,0.2); box-shadow:0 0 40px rgba(30,143,255,0.08);">
+        <img id="gallery-img-1"
+             style="width:100%; display:block; object-fit:cover; max-height:520px; transition:transform 0.6s ease;"
+             alt="SEW Project Sites — Urban, Coastal and Naval Deployments"
+             onmouseover="this.style.transform='scale(1.02)'"
+             onmouseout="this.style.transform='scale(1)'"/>
+        <div style="position:absolute; bottom:0; left:0; right:0; padding:20px 28px; background:linear-gradient(to top,rgba(4,9,26,0.95),transparent);">
+          <span style="color:#1e8fff; font-size:12px; letter-spacing:3px; text-transform:uppercase; font-family:'Rajdhani',sans-serif;">Urban &middot; Coastal &middot; Naval</span>
+          <p style="color:#f0f4ff; margin:4px 0 0; font-size:0.95rem;">Radome on high-rise buildings, lighthouse-mounted surveillance, and shipborne antenna erection across Indian waters.</p>
+        </div>
+      </div>
+      <div class="animate" style="position:relative; border-radius:12px; overflow:hidden; border:1px solid rgba(30,143,255,0.2); box-shadow:0 0 40px rgba(30,143,255,0.08);">
+        <img id="gallery-img-2"
+             style="width:100%; display:block; object-fit:cover; max-height:520px; transition:transform 0.6s ease;"
+             alt="SEW Project Sites — Mountain, Terrain and Structural Deployments"
+             onmouseover="this.style.transform='scale(1.02)'"
+             onmouseout="this.style.transform='scale(1)'"/>
+        <div style="position:absolute; bottom:0; left:0; right:0; padding:20px 28px; background:linear-gradient(to top,rgba(4,9,26,0.95),transparent);">
+          <span style="color:#1e8fff; font-size:12px; letter-spacing:3px; text-transform:uppercase; font-family:'Rajdhani',sans-serif;">Mountain &middot; High-Altitude &middot; Structural</span>
+          <p style="color:#f0f4ff; margin:4px 0 0; font-size:0.95rem;">Extreme terrain deployments, radome maintenance via rope access, and crane-assisted antenna positioning at altitude.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- LIGHTBOX -->
+<div id="sew-lightbox"
+     style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.92); cursor:zoom-out; align-items:center; justify-content:center;"
+     onclick="this.style.display='none'">
+  <img id="lightbox-img" style="max-width:94vw; max-height:90vh; border-radius:8px; box-shadow:0 0 60px rgba(30,143,255,0.3);"/>
+  <div style="position:absolute; top:20px; right:28px; color:#fff; font-size:28px; cursor:pointer; line-height:1;"
+       onclick="document.getElementById('sew-lightbox').style.display='none'">&#x2715;</div>
+</div>
+
 <section id="why">
   <div class="container">
     <div class="section-header animate">
@@ -853,7 +898,7 @@ footer {
           <div class="form-success" id="formSuccess">
             &#10003; &nbsp;Your inquiry has been received. We will contact you within 24 working hours.
           </div>
-          <form id="contactForm">
+          <form id="sew-contact-form">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Full Name *</label>
@@ -920,6 +965,34 @@ footer {
 </footer>
 
 <script>
+const IMG_HERO  = '';  /* TODO: replace '' with data:image/png;base64,<base64 of 1000137998.png> */
+const IMG_PROJ1 = '';  /* TODO: replace '' with data:image/png;base64,<base64 of 1000137999.png> */
+const IMG_PROJ2 = '';  /* TODO: replace '' with data:image/png;base64,<base64 of 1000138000.png> */
+
+document.addEventListener('DOMContentLoaded', function() {
+  var heroSection = document.getElementById('home')
+    || document.querySelector('.hero')
+    || document.querySelector('section:first-of-type');
+  if (heroSection && IMG_HERO) {
+    heroSection.style.backgroundImage = 'url(' + IMG_HERO + ')';
+    heroSection.style.backgroundSize = 'cover';
+    heroSection.style.backgroundPosition = 'center top';
+    heroSection.style.backgroundRepeat = 'no-repeat';
+  }
+  var g1 = document.getElementById('gallery-img-1');
+  var g2 = document.getElementById('gallery-img-2');
+  if (g1 && IMG_PROJ1) g1.src = IMG_PROJ1;
+  if (g2 && IMG_PROJ2) g2.src = IMG_PROJ2;
+  [g1, g2].forEach(function(img) {
+    if (!img) return;
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function() {
+      document.getElementById('lightbox-img').src = this.src;
+      document.getElementById('sew-lightbox').style.display = 'flex';
+    });
+  });
+});
+
 (function() {
   // Sticky nav
   var navbar = document.getElementById('navbar');
@@ -945,7 +1018,7 @@ footer {
   window.closeMobile = closeMobile;
 
   // Active nav
-  var sections = ['about','services','clients','projects','why','contact'];
+  var sections = ['about','services','clients','projects','site-gallery','why','contact'];
   var navAnchors = document.querySelectorAll('.nav-links a');
   function updateActiveNav() {
     var scrollPos = window.scrollY + 120;
@@ -1010,18 +1083,96 @@ footer {
     setTimeout(animateCounters, 800);
   }
 
-  // Contact form
-  var form = document.getElementById('contactForm');
-  var formSuccess = document.getElementById('formSuccess');
-  if (form) {
-    form.addEventListener('submit', function(e) {
+  // Contact form — mailto + WhatsApp modal
+  var sewForm = document.getElementById('sew-contact-form');
+  if (sewForm) {
+    sewForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      formSuccess.classList.add('show');
-      form.reset();
-      setTimeout(function() { formSuccess.classList.remove('show'); }, 6000);
+      var name    = (this.querySelector('[name="name"], #name')              || {value:''}).value.trim();
+      var org     = (this.querySelector('[name="org"], #org')                || {value:''}).value.trim();
+      var phone   = (this.querySelector('[name="phone"], #phone, input[type="tel"]') || {value:''}).value.trim();
+      var email   = (this.querySelector('[name="email"], #email, input[type="email"]') || {value:''}).value.trim();
+      var project = (this.querySelector('[name="project"], #project, select') || {value:''}).value.trim();
+      var message = (this.querySelector('[name="message"], #message, textarea') || {value:''}).value.trim();
+      var subject = encodeURIComponent('Project Inquiry — Shanthi Engineering Works');
+      var body = encodeURIComponent(
+        'Name: '         + (name    || 'Not provided') + '\n' +
+        'Organisation: ' + (org     || 'Not provided') + '\n' +
+        'Phone: '        + (phone   || 'Not provided') + '\n' +
+        'Email: '        + (email   || 'Not provided') + '\n' +
+        'Project Type: ' + (project || 'Not provided') + '\n\n' +
+        'Message:\n'     + (message || 'Not provided')
+      );
+      var mailtoLink = 'mailto:rangashanthi@gmail.com?subject=' + subject + '&body=' + body;
+      var waText = encodeURIComponent(
+        'New Project Inquiry - Shanthi Engineering Works\n' +
+        '---\n' +
+        'Name: '         + (name    || 'Not provided') + '\n' +
+        'Organisation: ' + (org     || 'Not provided') + '\n' +
+        'Phone: '        + (phone   || 'Not provided') + '\n' +
+        'Email: '        + (email   || 'Not provided') + '\n' +
+        'Project: '      + (project || 'Not provided') + '\n\n' +
+        'Message:\n'     + (message || 'Not provided')
+      );
+      var waLink = 'https://wa.me/919444456121?text=' + waText;
+      document.getElementById('sew-mailto-btn').href = mailtoLink;
+      document.getElementById('sew-wa-btn').href = waLink;
+      document.getElementById('sew-submit-modal').style.display = 'flex';
+    });
+  }
+  var sewModalClose = document.getElementById('sew-modal-close');
+  if (sewModalClose) {
+    sewModalClose.addEventListener('click', function() {
+      document.getElementById('sew-submit-modal').style.display = 'none';
     });
   }
 })();
 </script>
+<!-- WHATSAPP FLOAT BUTTON -->
+<a href="https://wa.me/919444456121?text=Hello%20Shanthi%20Engineering%20Works%2C%20I%20would%20like%20to%20enquire%20about%20your%20RADAR%20services."
+   target="_blank" rel="noopener" id="whatsapp-float" aria-label="Chat on WhatsApp"
+   style="position:fixed; bottom:28px; right:28px; z-index:1000; width:58px; height:58px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.45); text-decoration:none; transition:transform 0.2s ease, box-shadow 0.2s ease;"
+   onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 6px 28px rgba(37,211,102,0.6)'"
+   onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 20px rgba(37,211,102,0.45)'">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.533 5.845L.057 23.5l5.752-1.508A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.012-1.376l-.36-.214-3.714.974.993-3.62-.234-.373A9.818 9.818 0 1112 21.818z"/>
+  </svg>
+</a>
+<!-- SEND INQUIRY MODAL -->
+<div id="sew-submit-modal"
+     style="display:none; position:fixed; inset:0; z-index:10000; background:rgba(4,9,26,0.92); backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:24px;">
+  <div style="background:#080f22; border:1px solid rgba(30,143,255,0.25); border-radius:16px; padding:40px 36px; max-width:420px; width:100%; box-shadow:0 0 60px rgba(30,143,255,0.15); text-align:center; position:relative;">
+    <button id="sew-modal-close" style="position:absolute; top:16px; right:20px; background:none; border:none; color:#7a90b0; font-size:22px; cursor:pointer; line-height:1;">&#x2715;</button>
+    <div style="width:56px; height:56px; border-radius:50%; background:rgba(30,143,255,0.1); border:1px solid rgba(30,143,255,0.3); display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e8fff" stroke-width="2" stroke-linecap="round">
+        <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/>
+      </svg>
+    </div>
+    <h3 style="font-family:'Rajdhani',sans-serif; color:#f0f4ff; font-size:1.5rem; font-weight:700; margin:0 0 8px;">Send Your Inquiry</h3>
+    <p style="color:#7a90b0; font-size:0.9rem; margin:0 0 28px; line-height:1.6;">Choose how to send your message to<br><strong style="color:#94a3b8;">Shanthi Engineering Works</strong></p>
+    <a id="sew-mailto-btn" href="#" target="_blank"
+       style="display:flex; align-items:center; justify-content:center; gap:12px; width:100%; padding:14px 20px; border-radius:10px; margin-bottom:12px; background:rgba(30,143,255,0.1); border:1px solid rgba(30,143,255,0.3); color:#f0f4ff; text-decoration:none; font-size:0.95rem; font-family:'Rajdhani',sans-serif; font-weight:600; letter-spacing:0.5px; transition:all 0.2s ease;"
+       onmouseover="this.style.background='rgba(30,143,255,0.2)'; this.style.borderColor='rgba(30,143,255,0.6)'"
+       onmouseout="this.style.background='rgba(30,143,255,0.1)'; this.style.borderColor='rgba(30,143,255,0.3)'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e8fff" stroke-width="2" stroke-linecap="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/>
+      </svg>
+      Send via Email
+    </a>
+    <a id="sew-wa-btn" href="#" target="_blank"
+       style="display:flex; align-items:center; justify-content:center; gap:12px; width:100%; padding:14px 20px; border-radius:10px; background:rgba(37,211,102,0.1); border:1px solid rgba(37,211,102,0.3); color:#f0f4ff; text-decoration:none; font-size:0.95rem; font-family:'Rajdhani',sans-serif; font-weight:600; letter-spacing:0.5px; transition:all 0.2s ease;"
+       onmouseover="this.style.background='rgba(37,211,102,0.2)'; this.style.borderColor='rgba(37,211,102,0.6)'"
+       onmouseout="this.style.background='rgba(37,211,102,0.1)'; this.style.borderColor='rgba(37,211,102,0.3)'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.533 5.845L.057 23.5l5.752-1.508A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.012-1.376l-.36-.214-3.714.974.993-3.62-.234-.373A9.818 9.818 0 1112 21.818z"/>
+      </svg>
+      Send via WhatsApp
+    </a>
+    <p style="color:#4a5568; font-size:0.78rem; margin:20px 0 0;">No account required &middot; Zero data shared with third parties</p>
+  </div>
+</div>
+
 </body>
 </html>
