@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shanthi Engineering Works | RADAR Systems | Chennai, India</title>
+<meta name="description" content="30+ years of RADAR erection, commissioning and maintenance for Indian defense, space and meteorological sectors. Trusted by ISRO, IMD, BEL, Indian Navy and Indian Coast Guard.">
+<meta property="og:title" content="Shanthi Engineering Works — Innovating RADAR Systems">
+<meta property="og:description" content="India's trusted RADAR systems engineering specialist serving defense, space and meteorological sectors since 3 decades.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%231e8fff' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%231e8fff' stroke-width='1.5' opacity='0.7'/%3E%3Ccircle cx='32' cy='32' r='10' fill='none' stroke='%231e8fff' stroke-width='1' opacity='0.5'/%3E%3Ccircle cx='32' cy='32' r='3' fill='%231e8fff'/%3E%3Cline x1='32' y1='32' x2='58' y2='20' stroke='%2300d4ff' stroke-width='2' opacity='0.9'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #04091a;
+  --bg-secondary: #080f22;
+  --bg-card: rgba(255,255,255,0.035);
+  --accent-blue: #1e8fff;
+  --accent-cyan: #00d4ff;
+  --accent-glow: rgba(30,143,255,0.15);
+  --text-primary: #f0f4ff;
+  --text-secondary: #7a90b0;
+  --border: rgba(255,255,255,0.07);
+  --border-accent: rgba(30,143,255,0.3);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+h1,h2,h3,h4 { font-family: 'Rajdhani', sans-serif; font-weight: 700; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 1rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background 0.3s, border-bottom 0.3s, backdrop-filter 0.3s;
+}
+nav.scrolled {
+  background: rgba(4,9,26,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-accent);
+}
+.nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+.nav-logo-sew { font-family: 'Rajdhani', sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--accent-blue); letter-spacing: 2px; }
+.nav-logo-full { font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 1.5px; text-transform: uppercase; line-height: 1.2; }
+.nav-links { display: none; list-style: none; gap: 2rem; }
+.nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--accent-blue); }
+.hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--text-primary); transition: all 0.3s; border-radius: 2px; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-overlay {
+  display: none; position: fixed; inset: 0; z-index: 999;
+  background: rgba(4,9,26,0.97);
+  flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem;
+}
+.mobile-overlay.open { display: flex; }
+.mobile-overlay a { color: var(--text-primary); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-size: 2rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: color 0.2s; }
+.mobile-overlay a:hover { color: var(--accent-blue); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  position: relative; overflow: hidden;
+  background: var(--bg-primary);
+  background-image: radial-gradient(rgba(30,143,255,0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+  padding: 6rem 1.5rem 3rem;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(to bottom, rgba(4,9,26,0.55) 0%, rgba(4,9,26,0.75) 60%, rgba(4,9,26,0.95) 100%);
+}
+.radar-svg { width: 320px; height: 320px; margin: 0 auto 2rem; opacity: 0.85; }
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.radar-sweep-arm { transform-origin: 160px 160px; animation: radar-sweep 3s linear infinite; }
+.radar-fade {
+  position: absolute; border-radius: 50%;
+  background: conic-gradient(from -30deg, rgba(0,212,255,0.18) 0deg, transparent 120deg, transparent 360deg);
+  width: 320px; height: 320px;
+  animation: radar-sweep 3s linear infinite;
+  transform-origin: center;
+}
+.hero-content { position: relative; z-index: 1; max-width: 800px; }
+.hero-tag { display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-cyan); border: 1px solid var(--border-accent); padding: 0.3rem 1rem; border-radius: 20px; margin-bottom: 1.5rem; background: var(--accent-glow); }
+.hero h1 { font-size: clamp(2.2rem, 6vw, 4rem); letter-spacing: 3px; line-height: 1.1; margin-bottom: 0.5rem; text-transform: uppercase; background: linear-gradient(135deg, #f0f4ff 0%, var(--accent-blue) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-tagline { font-family: 'Rajdhani', sans-serif; font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 600; color: var(--accent-cyan); letter-spacing: 2px; margin-bottom: 1rem; }
+.hero-sub { color: var(--text-secondary); font-size: 1rem; max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.7; }
+.hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-block; padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+  color: #04091a; font-weight: 700; font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem; letter-spacing: 1px; text-decoration: none; border-radius: 4px;
+  transition: opacity 0.2s, transform 0.2s; border: none; cursor: pointer;
+}
+.btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+.btn-outline {
+  display: inline-block; padding: 0.75rem 2rem;
+  border: 1px solid var(--border-accent); color: var(--accent-blue);
+  font-weight: 700; font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem; letter-spacing: 1px; text-decoration: none; border-radius: 4px;
+  transition: background 0.2s, transform 0.2s; background: transparent; cursor: pointer;
+}
+.btn-outline:hover { background: var(--accent-glow); transform: translateY(-2px); }
+
+/* STATS BAR */
+.stats-bar {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 2.5rem 2rem;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
+.stat-item {}
+.stat-number { font-family: 'Rajdhani', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--accent-blue); line-height: 1; }
+.stat-label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 0.3rem; }
+
+/* SECTIONS COMMON */
+section { padding: 5rem 1.5rem; }
+.section-header { text-align: center; margin-bottom: 3.5rem; }
+.section-tag { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-cyan); margin-bottom: 0.75rem; }
+.section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.75rem; }
+.section-title span { color: var(--accent-blue); }
+.section-desc { color: var(--text-secondary); max-width: 560px; margin: 0 auto; font-size: 0.95rem; }
+.section-line { width: 60px; height: 3px; background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan)); margin: 1rem auto 0; border-radius: 2px; }
+.container { max-width: 1100px; margin: 0 auto; }
+
+/* ANIMATIONS */
+.animate { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.animate.visible { opacity: 1; transform: translateY(0); }
+
+/* ABOUT */
+#about { background: var(--bg-secondary); }
+.about-grid { display: grid; gap: 2.5rem; }
+.about-text p { color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.8; }
+.about-text p strong { color: var(--text-primary); }
+.about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.highlight-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-blue);
+  padding: 1rem 1.2rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.highlight-box strong { display: block; color: var(--text-primary); font-family: 'Rajdhani', sans-serif; font-size: 0.95rem; margin-bottom: 0.2rem; }
+
+/* SERVICES */
+.services-grid { display: grid; gap: 1.5rem; }
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.8rem;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  opacity: 0; transition: opacity 0.3s;
+}
+.service-card:hover { border-color: var(--border-accent); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(30,143,255,0.12); }
+.service-card:hover::before { opacity: 1; }
+.service-icon { width: 48px; height: 48px; margin-bottom: 1rem; }
+.service-card h3 { font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 0.5rem; text-transform: uppercase; }
+.service-card p { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.7; }
+
+/* CLIENTS */
+#clients { background: var(--bg-secondary); }
+.clients-grid { display: grid; gap: 1.5rem; }
+.client-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.8rem;
+  transition: border-color 0.3s, transform 0.3s;
+  text-align: center;
+}
+.client-card:hover { border-color: var(--border-accent); transform: translateY(-3px); }
+.client-abbr { font-family: 'Rajdhani', sans-serif; font-size: 2rem; font-weight: 700; color: var(--accent-blue); letter-spacing: 2px; }
+.client-name { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); margin: 0.3rem 0 0.5rem; }
+.client-desc { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+
+/* PROJECTS */
+.projects-grid { display: grid; gap: 1.5rem; }
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.project-card:hover { border-color: var(--border-accent); transform: translateY(-3px); }
+.project-visual { height: 160px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); position: relative; overflow: hidden; }
+.project-body { padding: 1.3rem; }
+.terrain-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent-cyan); border: 1px solid rgba(0,212,255,0.3); padding: 0.2rem 0.6rem; border-radius: 2px; margin-bottom: 0.6rem; background: rgba(0,212,255,0.06); }
+.project-body h3 { font-size: 1rem; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.project-body p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* WHY */
+#why { background: var(--bg-secondary); }
+.why-grid { display: grid; gap: 1.5rem; }
+.why-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex; gap: 1.2rem; align-items: flex-start;
+  transition: border-color 0.3s;
+}
+.why-card:hover { border-color: var(--border-accent); }
+.why-icon { width: 44px; height: 44px; flex-shrink: 0; background: var(--accent-glow); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.why-card h3 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+.why-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; }
+
+/* LEADERSHIP */
+.leadership-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2.5rem;
+  max-width: 700px; margin: 0 auto;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.leadership-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+}
+.leader-avatar {
+  width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1.2rem;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Rajdhani', sans-serif; font-size: 1.8rem; font-weight: 700; color: #04091a;
+}
+.leader-name { font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.2rem; }
+.leader-title { font-size: 0.8rem; color: var(--accent-cyan); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem; }
+.leader-bio { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.8; text-align: left; }
+.leader-bio p { margin-bottom: 0.8rem; }
+
+/* CONTACT */
+#contact { background: var(--bg-secondary); }
+.contact-grid { display: grid; gap: 2.5rem; }
+.contact-info h3 { font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1.5rem; color: var(--accent-blue); }
+.contact-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+.contact-item-icon { width: 40px; height: 40px; border-radius: 6px; background: var(--accent-glow); border: 1px solid var(--border-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-item-text strong { display: block; color: var(--text-primary); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; }
+.contact-item-text span { color: var(--text-secondary); font-size: 0.9rem; }
+.contact-item-text a { color: var(--accent-blue); text-decoration: none; }
+.avail-note { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent-cyan); padding: 1rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary); margin-top: 1.5rem; }
+.avail-note strong { color: var(--text-primary); }
+.contact-form { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; }
+.form-row { display: grid; gap: 1rem; margin-bottom: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text-secondary); }
+.form-group input, .form-group select, .form-group textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-primary);
+  padding: 0.7rem 0.9rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+  width: 100%;
+  -webkit-appearance: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--accent-blue);
+  background: rgba(30,143,255,0.05);
+}
+.form-group select option { background: #0d1528; color: var(--text-primary); }
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-success { display: none; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.3); border-radius: 4px; padding: 1rem; color: var(--accent-cyan); font-size: 0.9rem; margin-bottom: 1rem; text-align: center; }
+.form-success.show { display: block; }
+
+/* FOOTER */
+footer {
+  background: #020712;
+  border-top: 1px solid var(--border);
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+}
+.footer-logo { font-family: 'Rajdhani', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--accent-blue); letter-spacing: 3px; margin-bottom: 0.3rem; }
+.footer-tagline { font-size: 0.8rem; color: var(--text-secondary); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 2rem; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
+.footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+.footer-links a:hover { color: var(--accent-blue); }
+.footer-divider { width: 100%; height: 1px; background: var(--border); margin-bottom: 1.5rem; }
+.footer-copy { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.3rem; }
+.footer-serve { font-size: 0.75rem; color: rgba(122,144,176,0.6); letter-spacing: 1px; }
+
+/* RESPONSIVE */
+@media (min-width: 600px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .clients-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+  .form-row { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 768px) {
+  nav { padding: 1rem 3rem; }
+  .nav-links { display: flex; }
+  .hamburger { display: none; }
+  .about-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+  section { padding: 6rem 3rem; }
+  .contact-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+  .projects-grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#clients" onclick="closeMobile()">Clients</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#site-gallery" onclick="closeMobile()">Gallery</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div>
+      <div class="nav-logo-sew">SEW</div>
+      <div class="nav-logo-full">Shanthi Engineering Works</div>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#site-gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div style="position:relative;width:280px;height:280px;margin:0 auto 2rem;">
+      <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+        <circle cx="140" cy="140" r="130" fill="none" stroke="rgba(30,143,255,0.18)" stroke-width="1"/>
+        <circle cx="140" cy="140" r="95" fill="none" stroke="rgba(30,143,255,0.25)" stroke-width="1"/>
+        <circle cx="140" cy="140" r="60" fill="none" stroke="rgba(30,143,255,0.35)" stroke-width="1"/>
+        <circle cx="140" cy="140" r="28" fill="none" stroke="rgba(30,143,255,0.5)" stroke-width="1.5"/>
+        <circle cx="140" cy="140" r="5" fill="#1e8fff"/>
+        <line x1="0" y1="140" x2="280" y2="140" stroke="rgba(30,143,255,0.1)" stroke-width="1"/>
+        <line x1="140" y1="0" x2="140" y2="280" stroke="rgba(30,143,255,0.1)" stroke-width="1"/>
+        <g style="transform-origin:140px 140px;animation:radar-sweep 3s linear infinite">
+          <line x1="140" y1="140" x2="140" y2="10" stroke="#00d4ff" stroke-width="2" opacity="0.9"/>
+          <line x1="140" y1="140" x2="140" y2="10" stroke="#00d4ff" stroke-width="2" opacity="0.9"/>
+        </g>
+        <g style="transform-origin:140px 140px;animation:radar-sweep 3s linear infinite">
+          <path d="M140 140 L140 10 A130 130 0 0 1 165 14 Z" fill="url(#sweepGrad)" opacity="0.35"/>
+        </g>
+        <defs>
+          <radialGradient id="sweepGrad" cx="140" cy="140" r="130" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="195" cy="75" r="4" fill="#00d4ff" opacity="0.7"/>
+        <circle cx="85" cy="100" r="3" fill="#1e8fff" opacity="0.6"/>
+        <circle cx="210" cy="160" r="3" fill="#00d4ff" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="hero-tag">Est. 30+ Years of Excellence</div>
+    <h1>Shanthi Engineering Works</h1>
+    <div class="hero-tagline">Innovating RADAR Systems</div>
+    <p class="hero-sub">Three Decades of Precision. Trusted by India's Defense &amp; Space Establishment.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Our Services</a>
+      <a href="#contact" class="btn-outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-grid container">
+    <div class="stat-item animate">
+      <div class="stat-number" data-target="30" data-suffix="+">0</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-item animate">
+      <div class="stat-number" data-target="6" data-suffix="">0</div>
+      <div class="stat-label">Government Clients</div>
+    </div>
+    <div class="stat-item animate">
+      <div class="stat-number" data-target="4" data-suffix="">0</div>
+      <div class="stat-label">RADAR Categories</div>
+    </div>
+    <div class="stat-item animate">
+      <div class="stat-number" data-target="50" data-suffix="+">0</div>
+      <div class="stat-label">Pan-India Deployments</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">Who We Are</div>
+      <h2 class="section-title">About <span>SEW</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text animate">
+        <p><strong>Shanthi Engineering Works (SEW)</strong> is a Chennai-based engineering enterprise with over three decades of specialized experience in RADAR systems — from erection and assembly to full commissioning and long-term maintenance.</p>
+        <p>Founded by <strong>S. Rangasamy</strong>, SEW has built an unmatched reputation across India's most demanding sectors: national defense, space research, air traffic management, and meteorological surveillance. Our projects span remote mountain terrains, coastal installations, naval vessels, and urban high-rise environments.</p>
+        <p>As a trusted partner to institutions like <strong>ISRO, the Indian Navy, BEL, IMD, NAL, and the Indian Coast Guard</strong>, SEW brings government-grade rigor, field engineering excellence, and a commitment to mission-critical precision on every project.</p>
+        <p>We specialize not just in technical execution, but in the logistical complexity of deploying, relocating, and sustaining RADAR infrastructure across India's diverse and often challenging landscapes.</p>
+      </div>
+      <div class="animate">
+        <div class="about-highlights">
+          <div class="highlight-box"><strong>Sole Proprietorship</strong>Since establishment — deep personal accountability on every project</div>
+          <div class="highlight-box"><strong>Government-Grade Quality</strong>Standards aligned with defense and space sector requirements</div>
+          <div class="highlight-box"><strong>All-Terrain Deployments</strong>Mountain, coastal, maritime, urban, and open-terrain installations</div>
+          <div class="highlight-box"><strong>Expert Field Workforce</strong>Seasoned engineers trained in RADAR assembly &amp; commissioning</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">What We Do</div>
+      <h2 class="section-title">Our <span>Services</span></h2>
+      <p class="section-desc">End-to-end RADAR engineering solutions — from steel erection to system handover — delivered across India's most demanding environments.</p>
+      <div class="section-line"></div>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card animate">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="22" y="8" width="4" height="28" fill="#1e8fff" rx="1"/>
+          <rect x="12" y="18" width="24" height="3" fill="#1e8fff" rx="1"/>
+          <rect x="16" y="22" width="4" height="14" fill="rgba(30,143,255,0.5)" rx="1"/>
+          <rect x="28" y="22" width="4" height="14" fill="rgba(30,143,255,0.5)" rx="1"/>
+          <rect x="10" y="36" width="28" height="3" fill="#00d4ff" rx="1"/>
+          <path d="M24 8 L14 18 M24 8 L34 18" stroke="#00d4ff" stroke-width="1.5"/>
+        </svg>
+        <h3>RADAR Erection &amp; Assembly</h3>
+        <p>Full structural erection of RADAR antenna towers, masts, and lattice steel frameworks. We handle foundation-to-apex assembly with precision alignment for optimal signal performance across all system types.</p>
+      </div>
+
+      <div class="service-card animate">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="24" cy="32" rx="14" ry="6" fill="rgba(30,143,255,0.2)" stroke="#1e8fff" stroke-width="1.5"/>
+          <path d="M10 32 Q10 16 24 12 Q38 16 38 32" fill="rgba(30,143,255,0.1)" stroke="#1e8fff" stroke-width="1.5"/>
+          <circle cx="24" cy="32" r="3" fill="#00d4ff"/>
+          <path d="M18 22 Q24 18 30 22" stroke="#00d4ff" stroke-width="1.2" fill="none"/>
+        </svg>
+        <h3>Radome Installation &amp; Maintenance</h3>
+        <p>Expert installation, alignment, and maintenance of protective radomes for all weather and defense RADAR systems. We ensure structural integrity and RF transparency throughout the radome lifecycle.</p>
+      </div>
+
+      <div class="service-card animate">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="12" width="32" height="24" rx="3" fill="rgba(30,143,255,0.1)" stroke="#1e8fff" stroke-width="1.5"/>
+          <path d="M15 24 L21 30 L34 18" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="36" cy="14" r="4" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="1.2"/>
+        </svg>
+        <h3>System Commissioning &amp; Handover</h3>
+        <p>Comprehensive end-to-end system commissioning including alignment verification, performance testing, calibration, and formal handover documentation. We ensure your RADAR system is operationally certified.</p>
+      </div>
+
+      <div class="service-card animate">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 32 L16 28 L20 32 L24 24 L28 30 L32 26 L36 30" stroke="#1e8fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M30 14 L36 14 L36 20" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M36 14 L26 24" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
+          <rect x="8" y="34" width="32" height="4" rx="2" fill="rgba(30,143,255,0.3)"/>
+        </svg>
+        <h3>Dismantling &amp; Relocation</h3>
+        <p>Safe, systematic dismantling of RADAR installations for relocation or decommissioning. We preserve equipment integrity through structured disassembly, transport coordination, and reinstallation at new sites.</p>
+      </div>
+
+      <div class="service-card animate">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 30 L14 22 L20 26 L26 18 L32 22 L38 14" stroke="#1e8fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M24 32 L24 40" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
+          <path d="M14 32 L34 32" stroke="#00d4ff" stroke-width="1.5"/>
+          <path d="M20 14 L16 10 M20 14 L22 9 M20 14 L25 11" stroke="#00d4ff" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <h3>Air Traffic RADAR Systems</h3>
+        <p>Installation and commissioning of Air Traffic Control RADAR systems at airports and defense airfields. We deliver precision-grade ASR and ARSR systems that meet the rigorous standards of DGCA and Indian Air Force.</p>
+      </div>
+
+      <div class="service-card animate">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 28 Q18 14 30 18 Q38 10 40 22" fill="rgba(30,143,255,0.1)" stroke="#1e8fff" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M14 34 Q20 26 28 28 Q34 22 38 28" fill="none" stroke="rgba(30,143,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="24" cy="36" r="4" fill="rgba(0,212,255,0.2)" stroke="#00d4ff" stroke-width="1.5"/>
+          <path d="M24 32 L24 20" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M18 26 Q24 20 30 26" fill="none" stroke="#00d4ff" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <h3>Weather &amp; Defence RADAR Systems</h3>
+        <p>Specialized installation of Doppler weather RADAR (DWSR), C-band, S-band, and X-band systems for IMD and defense applications. We handle structural, RF, and systems integration for complete meteorological and surveillance capability.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">Our Partners</div>
+      <h2 class="section-title">Trusted by India's <span>Finest Institutions</span></h2>
+      <p class="section-desc">Three decades of government-grade delivery have earned SEW the confidence of India's most demanding defense, space, and scientific organizations.</p>
+      <div class="section-line"></div>
+    </div>
+    <div class="clients-grid">
+      <div class="client-card animate">
+        <div class="client-abbr">IN</div>
+        <div class="client-name">Indian Navy</div>
+        <div class="client-desc">Shipborne and coastal RADAR installations for India's primary naval defense force, ensuring maritime domain awareness.</div>
+      </div>
+      <div class="client-card animate">
+        <div class="client-abbr">ICG</div>
+        <div class="client-name">Indian Coast Guard</div>
+        <div class="client-desc">Coastal surveillance RADAR systems supporting India's maritime security and search &amp; rescue operations.</div>
+      </div>
+      <div class="client-card animate">
+        <div class="client-abbr">BEL</div>
+        <div class="client-name">Bharat Electronics Limited</div>
+        <div class="client-desc">India's premier defense electronics PSU — supplying RADAR systems to all three armed services and strategic sectors.</div>
+      </div>
+      <div class="client-card animate">
+        <div class="client-abbr">NAL</div>
+        <div class="client-name">National Aerospace Laboratories</div>
+        <div class="client-desc">CSIR's premier aerospace R&amp;D institution, advancing India's civil aviation and atmospheric research capabilities.</div>
+      </div>
+      <div class="client-card animate">
+        <div class="client-abbr">IMD</div>
+        <div class="client-name">India Meteorological Department</div>
+        <div class="client-desc">India's national weather agency operating Doppler weather RADAR networks for forecasting and disaster warning.</div>
+      </div>
+      <div class="client-card animate">
+        <div class="client-abbr">ISRO</div>
+        <div class="client-name">Indian Space Research Organisation</div>
+        <div class="client-desc">India's apex space agency operating tracking RADAR and telemetry systems at launch sites across the country.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">Our Work</div>
+      <h2 class="section-title">Projects Across <span>Scope &amp; Terrains</span></h2>
+      <p class="section-desc">Representative deployments showcasing SEW's capability across India's most diverse and demanding environments.</p>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card animate">
+        <div class="project-visual">
+          <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="240" height="160" fill="#060d1f"/>
+            <rect x="60" y="50" width="50" height="90" fill="rgba(30,143,255,0.15)" stroke="rgba(30,143,255,0.3)" stroke-width="1"/>
+            <rect x="130" y="70" width="40" height="70" fill="rgba(30,143,255,0.1)" stroke="rgba(30,143,255,0.25)" stroke-width="1"/>
+            <rect x="20" y="80" width="30" height="60" fill="rgba(30,143,255,0.08)" stroke="rgba(30,143,255,0.2)" stroke-width="1"/>
+            <rect x="82" y="30" width="6" height="22" fill="#1e8fff"/>
+            <ellipse cx="85" cy="28" rx="10" ry="6" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+            <path d="M0 140 H240" stroke="rgba(30,143,255,0.2)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <span class="terrain-badge">Urban</span>
+          <h3>Urban High-Rise Deployment</h3>
+          <p>Radome and antenna installation atop government administrative building in Chennai — structural assessment, rooftop reinforcement, and commissioning in a dense urban environment.</p>
+        </div>
+      </div>
+
+      <div class="project-card animate">
+        <div class="project-visual">
+          <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="240" height="160" fill="#060d1f"/>
+            <polygon points="120,20 160,100 80,100" fill="rgba(30,143,255,0.1)" stroke="rgba(30,143,255,0.3)" stroke-width="1"/>
+            <polygon points="50,60 90,130 10,130" fill="rgba(30,143,255,0.07)" stroke="rgba(30,143,255,0.2)" stroke-width="1"/>
+            <polygon points="190,50 230,130 150,130" fill="rgba(30,143,255,0.07)" stroke="rgba(30,143,255,0.2)" stroke-width="1"/>
+            <rect x="118" y="8" width="4" height="14" fill="#1e8fff"/>
+            <path d="M114 10 L110 4 M122 10 L126 4 M118 8 L118 2" stroke="#00d4ff" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M0 130 H240" stroke="rgba(30,143,255,0.15)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <span class="terrain-badge">Mountain</span>
+          <h3>High-Altitude Mountain Installation</h3>
+          <p>RADAR tower erected at 3,000m+ altitude for defense surveillance. Extreme weather logistics, helicopter-assisted material transport, and cold-environment commissioning protocols.</p>
+        </div>
+      </div>
+
+      <div class="project-card animate">
+        <div class="project-visual">
+          <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="240" height="160" fill="#060d1f"/>
+            <rect x="105" y="60" width="30" height="80" fill="rgba(30,143,255,0.15)" stroke="rgba(30,143,255,0.3)" stroke-width="1"/>
+            <circle cx="120" cy="55" r="8" fill="rgba(30,143,255,0.2)" stroke="rgba(30,143,255,0.4)" stroke-width="1.5"/>
+            <rect x="118" y="34" width="4" height="22" fill="#1e8fff"/>
+            <path d="M114 36 L110 30 M122 36 L126 30" stroke="#00d4ff" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M0 120 Q60 110 120 118 Q180 126 240 115" fill="rgba(30,143,255,0.08)" stroke="rgba(30,143,255,0.25)" stroke-width="1"/>
+            <path d="M0 130 Q60 120 120 128 Q180 136 240 125" fill="rgba(30,143,255,0.05)" stroke="none"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <span class="terrain-badge">Coastal</span>
+          <h3>Coastal Lighthouse Surveillance</h3>
+          <p>RADAR antenna mounted on active lighthouse structure for Indian Coast Guard coastal monitoring. Saltwater environment hardening, structural compatibility analysis, and marine-grade commissioning.</p>
+        </div>
+      </div>
+
+      <div class="project-card animate">
+        <div class="project-visual">
+          <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="240" height="160" fill="#060d1f"/>
+            <path d="M30 110 Q120 90 210 110 L210 140 Q120 160 30 140 Z" fill="rgba(30,143,255,0.1)" stroke="rgba(30,143,255,0.3)" stroke-width="1"/>
+            <rect x="90" y="80" width="60" height="30" fill="rgba(30,143,255,0.12)" stroke="rgba(30,143,255,0.25)" stroke-width="1"/>
+            <rect x="118" y="60" width="4" height="22" fill="#1e8fff"/>
+            <ellipse cx="120" cy="58" rx="12" ry="7" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+            <path d="M150 75 L170 55 L170 90" stroke="rgba(30,143,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M0 130 H240" stroke="rgba(30,143,255,0.1)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <span class="terrain-badge">Maritime</span>
+          <h3>Naval Vessel Installation</h3>
+          <p>Shipborne RADAR antenna installation aboard Indian Navy vessel. Crane-assisted assembly, vibration-isolated mast mounting, and at-berth systems commissioning with naval engineering teams.</p>
+        </div>
+      </div>
+
+      <div class="project-card animate">
+        <div class="project-visual">
+          <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="240" height="160" fill="#060d1f"/>
+            <rect x="115" y="40" width="10" height="80" fill="rgba(30,143,255,0.3)" stroke="#1e8fff" stroke-width="1"/>
+            <rect x="100" y="40" width="40" height="6" fill="#1e8fff" rx="1"/>
+            <line x1="120" y1="46" x2="90" y2="80" stroke="rgba(30,143,255,0.5)" stroke-width="1.5"/>
+            <line x1="120" y1="46" x2="150" y2="80" stroke="rgba(30,143,255,0.5)" stroke-width="1.5"/>
+            <line x1="120" y1="60" x2="95" y2="90" stroke="rgba(30,143,255,0.4)" stroke-width="1"/>
+            <line x1="120" y1="60" x2="145" y2="90" stroke="rgba(30,143,255,0.4)" stroke-width="1"/>
+            <rect x="85" y="118" width="70" height="5" fill="rgba(30,143,255,0.2)"/>
+            <path d="M114 34 L110 28 M126 34 L130 28 M120 32 L120 24" stroke="#00d4ff" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M0 130 H240" stroke="rgba(30,143,255,0.15)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <span class="terrain-badge">Open Terrain</span>
+          <h3>Ground RADAR Tower</h3>
+          <p>Lattice steel tower erection on open terrain for long-range defense surveillance RADAR. Civil foundation, steel assembly, antenna mounting, and full systems integration with ground equipment shelter.</p>
+        </div>
+      </div>
+
+      <div class="project-card animate">
+        <div class="project-visual">
+          <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="240" height="160" fill="#060d1f"/>
+            <ellipse cx="120" cy="90" rx="55" ry="40" fill="rgba(30,143,255,0.08)" stroke="rgba(30,143,255,0.3)" stroke-width="1.5"/>
+            <ellipse cx="120" cy="90" rx="40" ry="28" fill="rgba(30,143,255,0.05)" stroke="rgba(30,143,255,0.2)" stroke-width="1"/>
+            <ellipse cx="120" cy="90" rx="22" ry="16" fill="rgba(30,143,255,0.08)" stroke="rgba(30,143,255,0.35)" stroke-width="1"/>
+            <rect x="118" y="108" width="4" height="25" fill="rgba(30,143,255,0.5)"/>
+            <rect x="108" y="130" width="24" height="4" fill="rgba(30,143,255,0.3)" rx="1"/>
+            <circle cx="120" cy="88" r="5" fill="#00d4ff" opacity="0.7"/>
+            <path d="M120 88 L160 50" stroke="#00d4ff" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <span class="terrain-badge">Precision</span>
+          <h3>Parabolic Dish Installation</h3>
+          <p>Large-aperture parabolic antenna installation for ISRO/IMD class applications. High-precision azimuth/elevation alignment, encoder calibration, and RF performance verification against design specifications.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE SEW -->
+<!-- SITE GALLERY -->
+<section id="site-gallery" style="padding:100px 0; background:#04091a;">
+  <div style="max-width:1200px; margin:0 auto; padding:0 24px;">
+    <div style="text-align:center; margin-bottom:60px;" class="animate">
+      <span style="color:#1e8fff; font-family:'Rajdhani',sans-serif; font-size:13px; letter-spacing:4px; text-transform:uppercase;">Field Operations</span>
+      <h2 style="font-family:'Rajdhani',sans-serif; font-size:clamp(2rem,4vw,3rem); color:#f0f4ff; margin:12px 0 0; font-weight:700;">Projects Across Scope &amp; Terrains</h2>
+      <p style="color:#7a90b0; margin-top:16px; max-width:600px; margin-left:auto; margin-right:auto; font-size:1.05rem;">From high-altitude mountain deployments to naval vessel installations — real field operations across India's most demanding environments.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:24px;">
+      <div class="animate" style="position:relative; border-radius:12px; overflow:hidden; border:1px solid rgba(30,143,255,0.2); box-shadow:0 0 40px rgba(30,143,255,0.08);">
+        <img id="gallery-img-1"
+             style="width:100%; display:block; object-fit:cover; max-height:520px; transition:transform 0.6s ease;"
+             alt="SEW Project Sites — Urban, Coastal and Naval Deployments"
+             onmouseover="this.style.transform='scale(1.02)'"
+             onmouseout="this.style.transform='scale(1)'"/>
+        <div style="position:absolute; bottom:0; left:0; right:0; padding:20px 28px; background:linear-gradient(to top,rgba(4,9,26,0.95),transparent);">
+          <span style="color:#1e8fff; font-size:12px; letter-spacing:3px; text-transform:uppercase; font-family:'Rajdhani',sans-serif;">Urban &middot; Coastal &middot; Naval</span>
+          <p style="color:#f0f4ff; margin:4px 0 0; font-size:0.95rem;">Radome on high-rise buildings, lighthouse-mounted surveillance, and shipborne antenna erection across Indian waters.</p>
+        </div>
+      </div>
+      <div class="animate" style="position:relative; border-radius:12px; overflow:hidden; border:1px solid rgba(30,143,255,0.2); box-shadow:0 0 40px rgba(30,143,255,0.08);">
+        <img id="gallery-img-2"
+             style="width:100%; display:block; object-fit:cover; max-height:520px; transition:transform 0.6s ease;"
+             alt="SEW Project Sites — Mountain, Terrain and Structural Deployments"
+             onmouseover="this.style.transform='scale(1.02)'"
+             onmouseout="this.style.transform='scale(1)'"/>
+        <div style="position:absolute; bottom:0; left:0; right:0; padding:20px 28px; background:linear-gradient(to top,rgba(4,9,26,0.95),transparent);">
+          <span style="color:#1e8fff; font-size:12px; letter-spacing:3px; text-transform:uppercase; font-family:'Rajdhani',sans-serif;">Mountain &middot; High-Altitude &middot; Structural</span>
+          <p style="color:#f0f4ff; margin:4px 0 0; font-size:0.95rem;">Extreme terrain deployments, radome maintenance via rope access, and crane-assisted antenna positioning at altitude.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- LIGHTBOX -->
+<div id="sew-lightbox"
+     style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.92); cursor:zoom-out; align-items:center; justify-content:center;"
+     onclick="this.style.display='none'">
+  <img id="lightbox-img" style="max-width:94vw; max-height:90vh; border-radius:8px; box-shadow:0 0 60px rgba(30,143,255,0.3);"/>
+  <div style="position:absolute; top:20px; right:28px; color:#fff; font-size:28px; cursor:pointer; line-height:1;"
+       onclick="document.getElementById('sew-lightbox').style.display='none'">&#x2715;</div>
+</div>
+
+<section id="why">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">Our Edge</div>
+      <h2 class="section-title">Why Choose <span>SEW</span></h2>
+      <p class="section-desc">Four core pillars that have made Shanthi Engineering Works the first choice for India's most critical RADAR infrastructure projects.</p>
+      <div class="section-line"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card animate">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L14.5 9H22L16 13.5L18.5 20.5L12 16L5.5 20.5L8 13.5L2 9H9.5L12 2Z" stroke="#1e8fff" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div>
+          <h3>30+ Years of Proven Expertise</h3>
+          <p>Three decades of continuous operation across India's defense and space sectors. Our institutional knowledge spans every generation of RADAR technology from legacy analog systems to modern digital phased-array platforms.</p>
+        </div>
+      </div>
+      <div class="why-card animate">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3L20 7V13C20 17 16.5 20.5 12 22C7.5 20.5 4 17 4 13V7L12 3Z" stroke="#1e8fff" stroke-width="1.5" fill="rgba(30,143,255,0.1)"/>
+            <path d="M9 12L11 14L15 10" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Trusted by India's Defense Establishment</h3>
+          <p>Long-standing relationships with the Indian Navy, Coast Guard, BEL, ISRO, IMD, and NAL speak to our reliability. Our track record on classified and strategic projects reflects the highest level of institutional trust.</p>
+        </div>
+      </div>
+      <div class="why-card animate">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 17L9 11L13 15L21 7" stroke="#1e8fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="21" cy="7" r="2" fill="rgba(0,212,255,0.3)" stroke="#00d4ff" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <div>
+          <h3>All-Terrain Deployment Capability</h3>
+          <p>From Himalayan high-altitude outposts to coastal naval stations and urban installations, SEW has executed projects in every terrain type across India. Our teams are trained for adverse environments and remote locations.</p>
+        </div>
+      </div>
+      <div class="why-card animate">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="8" height="8" rx="1" stroke="#1e8fff" stroke-width="1.5" fill="rgba(30,143,255,0.1)"/>
+            <rect x="13" y="3" width="8" height="8" rx="1" stroke="#1e8fff" stroke-width="1.5" fill="rgba(30,143,255,0.1)"/>
+            <rect x="3" y="13" width="8" height="8" rx="1" stroke="#1e8fff" stroke-width="1.5" fill="rgba(30,143,255,0.1)"/>
+            <rect x="13" y="13" width="8" height="8" rx="1" stroke="#00d4ff" stroke-width="1.5" fill="rgba(0,212,255,0.1)"/>
+          </svg>
+        </div>
+        <div>
+          <h3>End-to-End: Erection to Commissioning</h3>
+          <p>We own the full project lifecycle — from structural erection, RF alignment, and systems integration to formal commissioning and documented handover. Single-point accountability means zero gaps in your project execution.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership" style="background:var(--bg-primary);">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">Leadership</div>
+      <h2 class="section-title">The <span>Founding Vision</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="leadership-card animate">
+      <div class="leader-avatar">SR</div>
+      <div class="leader-name">S. Rangasamy</div>
+      <div class="leader-title">Proprietor, Shanthi Engineering Works</div>
+      <div class="leader-bio">
+        <p>With over three decades at the helm of Shanthi Engineering Works, <strong>S. Rangasamy</strong> has built the company from a specialized engineering firm into one of India's most trusted names in RADAR systems deployment. His personal involvement in every major project reflects a philosophy rooted in accountability, technical precision, and mission-first delivery.</p>
+        <p>Mr. Rangasamy's expertise spans the full spectrum of RADAR engineering — from structural erection and mechanical alignment to electronic commissioning and systems integration. He has personally overseen projects for the Indian Navy, ISRO, IMD, and BEL, earning recognition from client organizations for his hands-on approach and deep domain knowledge.</p>
+        <p>His leadership philosophy is simple: <strong>government-grade quality is not a specification — it is a way of working.</strong> Every project executed by SEW reflects this commitment, whether it is a remote mountain installation or a shipborne system deployed in active naval service.</p>
+        <p>Under his direction, SEW has maintained an unblemished record of on-time, on-specification delivery across India's most demanding defense and scientific programs — a testament to his engineering integrity and leadership depth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Contact <span>SEW</span></h2>
+      <p class="section-desc">Ready to discuss your RADAR project? Reach out directly — we respond to all serious inquiries from defense, space, and government organizations.</p>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="animate">
+        <div class="contact-info">
+          <h3>Direct Contact</h3>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.6 10.8C7.8 13.2 9.8 15.2 12.2 16.4L14 14.6C14.2 14.4 14.6 14.4 14.8 14.6C15.8 15 16.9 15.2 18 15.2C18.6 15.2 19 15.6 19 16.2V18C19 18.6 18.6 19 18 19C10.8 19 5 13.2 5 6C5 5.4 5.4 5 6 5H8C8.6 5 9 5.4 9 6C9 7.1 9.2 8.2 9.6 9.2C9.7 9.5 9.6 9.8 9.4 10.1L7.8 11.7C7.6 11.4 7.1 11.1 6.6 10.8Z" stroke="#1e8fff" stroke-width="1.5" fill="none"/>
+              </svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Phone</strong>
+              <span><a href="tel:+919444456121">+91 - 9444 456 121</a></span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="5" width="18" height="14" rx="2" stroke="#1e8fff" stroke-width="1.5" fill="none"/>
+                <path d="M3 7L12 13L21 7" stroke="#1e8fff" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Email</strong>
+              <span><a href="mailto:rangashanthi@gmail.com">rangashanthi@gmail.com</a></span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" stroke="#1e8fff" stroke-width="1.5" fill="none"/>
+              </svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Location</strong>
+              <span>Chennai, Tamil Nadu, India</span>
+            </div>
+          </div>
+          <div class="avail-note">
+            <strong>Availability:</strong> We accept project inquiries from government organizations, defense PSUs, and authorized contractors. Response time is typically within 24 working hours. For urgent requirements, please call directly.
+          </div>
+        </div>
+      </div>
+      <div class="animate">
+        <div class="contact-form">
+          <div class="form-success" id="formSuccess">
+            &#10003; &nbsp;Your inquiry has been received. We will contact you within 24 working hours.
+          </div>
+          <form id="sew-contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="org">Organisation *</label>
+                <input type="text" id="org" name="org" placeholder="Organisation name" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom:1rem;">
+              <label for="project">Project Type</label>
+              <select id="project" name="project">
+                <option value="">Select project type...</option>
+                <option>RADAR Erection</option>
+                <option>Radome Installation</option>
+                <option>System Commissioning</option>
+                <option>Dismantling &amp; Relocation</option>
+                <option>Air Traffic RADAR</option>
+                <option>Weather RADAR</option>
+                <option>Defence RADAR</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom:1.5rem;">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Describe your project requirements, site location, timeline, and any specific technical needs..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;font-size:1rem;padding:0.85rem;">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">SEW</div>
+    <div class="footer-tagline">Shanthi Engineering Works &mdash; Innovating RADAR Systems</div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#clients">Clients</a>
+      <a href="#projects">Projects</a>
+      <a href="#why">Why SEW</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-copy">&copy; 2025 Shanthi Engineering Works. All Rights Reserved.</div>
+    <div class="footer-serve">Serving India's Defense &amp; Space Sector for 30+ Years</div>
+  </div>
+</footer>
+
+<script>
+const IMG_HERO  = '';  /* TODO: replace '' with data:image/png;base64,<base64 of 1000137998.png> */
+const IMG_PROJ1 = '';  /* TODO: replace '' with data:image/png;base64,<base64 of 1000137999.png> */
+const IMG_PROJ2 = '';  /* TODO: replace '' with data:image/png;base64,<base64 of 1000138000.png> */
+
+document.addEventListener('DOMContentLoaded', function() {
+  var heroSection = document.getElementById('home')
+    || document.querySelector('.hero')
+    || document.querySelector('section:first-of-type');
+  if (heroSection && IMG_HERO) {
+    heroSection.style.backgroundImage = 'url(' + IMG_HERO + ')';
+    heroSection.style.backgroundSize = 'cover';
+    heroSection.style.backgroundPosition = 'center top';
+    heroSection.style.backgroundRepeat = 'no-repeat';
+  }
+  var g1 = document.getElementById('gallery-img-1');
+  var g2 = document.getElementById('gallery-img-2');
+  if (g1 && IMG_PROJ1) g1.src = IMG_PROJ1;
+  if (g2 && IMG_PROJ2) g2.src = IMG_PROJ2;
+  [g1, g2].forEach(function(img) {
+    if (!img) return;
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function() {
+      document.getElementById('lightbox-img').src = this.src;
+      document.getElementById('sew-lightbox').style.display = 'flex';
+    });
+  });
+});
+
+(function() {
+  // Sticky nav
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+    updateActiveNav();
+  });
+
+  // Mobile menu
+  var hamburger = document.getElementById('hamburger');
+  var overlay = document.getElementById('mobileOverlay');
+  hamburger.addEventListener('click', function() {
+    var open = overlay.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  function closeMobile() {
+    overlay.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  window.closeMobile = closeMobile;
+
+  // Active nav
+  var sections = ['about','services','clients','projects','site-gallery','why','contact'];
+  var navAnchors = document.querySelectorAll('.nav-links a');
+  function updateActiveNav() {
+    var scrollPos = window.scrollY + 120;
+    var current = '';
+    sections.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollPos) current = id;
+    });
+    navAnchors.forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+
+  // IntersectionObserver animations
+  var animateEls = document.querySelectorAll('.animate');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    animateEls.forEach(function(el) { observer.observe(el); });
+  } else {
+    setTimeout(function() {
+      animateEls.forEach(function(el) { el.classList.add('visible'); });
+    }, 300);
+  }
+
+  // Counter animation
+  var counted = false;
+  var statsBar = document.querySelector('.stats-bar');
+  function animateCounters() {
+    if (counted) return;
+    var counters = document.querySelectorAll('.stat-number');
+    counters.forEach(function(el) {
+      var target = parseInt(el.getAttribute('data-target'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var start = 0;
+      var duration = 1600;
+      var startTime = null;
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        var val = Math.floor(progress * target);
+        el.textContent = val + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target + suffix;
+      }
+      requestAnimationFrame(step);
+    });
+    counted = true;
+  }
+  if ('IntersectionObserver' in window) {
+    var statsObs = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) { animateCounters(); statsObs.disconnect(); }
+    }, { threshold: 0.3 });
+    if (statsBar) statsObs.observe(statsBar);
+  } else {
+    setTimeout(animateCounters, 800);
+  }
+
+  // Contact form — mailto + WhatsApp modal
+  var sewForm = document.getElementById('sew-contact-form');
+  if (sewForm) {
+    sewForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name    = (this.querySelector('[name="name"], #name')              || {value:''}).value.trim();
+      var org     = (this.querySelector('[name="org"], #org')                || {value:''}).value.trim();
+      var phone   = (this.querySelector('[name="phone"], #phone, input[type="tel"]') || {value:''}).value.trim();
+      var email   = (this.querySelector('[name="email"], #email, input[type="email"]') || {value:''}).value.trim();
+      var project = (this.querySelector('[name="project"], #project, select') || {value:''}).value.trim();
+      var message = (this.querySelector('[name="message"], #message, textarea') || {value:''}).value.trim();
+      var subject = encodeURIComponent('Project Inquiry — Shanthi Engineering Works');
+      var body = encodeURIComponent(
+        'Name: '         + (name    || 'Not provided') + '\n' +
+        'Organisation: ' + (org     || 'Not provided') + '\n' +
+        'Phone: '        + (phone   || 'Not provided') + '\n' +
+        'Email: '        + (email   || 'Not provided') + '\n' +
+        'Project Type: ' + (project || 'Not provided') + '\n\n' +
+        'Message:\n'     + (message || 'Not provided')
+      );
+      var mailtoLink = 'mailto:rangashanthi@gmail.com?subject=' + subject + '&body=' + body;
+      var waText = encodeURIComponent(
+        'New Project Inquiry - Shanthi Engineering Works\n' +
+        '---\n' +
+        'Name: '         + (name    || 'Not provided') + '\n' +
+        'Organisation: ' + (org     || 'Not provided') + '\n' +
+        'Phone: '        + (phone   || 'Not provided') + '\n' +
+        'Email: '        + (email   || 'Not provided') + '\n' +
+        'Project: '      + (project || 'Not provided') + '\n\n' +
+        'Message:\n'     + (message || 'Not provided')
+      );
+      var waLink = 'https://wa.me/919444456121?text=' + waText;
+      document.getElementById('sew-mailto-btn').href = mailtoLink;
+      document.getElementById('sew-wa-btn').href = waLink;
+      document.getElementById('sew-submit-modal').style.display = 'flex';
+    });
+  }
+  var sewModalClose = document.getElementById('sew-modal-close');
+  if (sewModalClose) {
+    sewModalClose.addEventListener('click', function() {
+      document.getElementById('sew-submit-modal').style.display = 'none';
+    });
+  }
+})();
+</script>
+<!-- WHATSAPP FLOAT BUTTON -->
+<a href="https://wa.me/919444456121?text=Hello%20Shanthi%20Engineering%20Works%2C%20I%20would%20like%20to%20enquire%20about%20your%20RADAR%20services."
+   target="_blank" rel="noopener" id="whatsapp-float" aria-label="Chat on WhatsApp"
+   style="position:fixed; bottom:28px; right:28px; z-index:1000; width:58px; height:58px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.45); text-decoration:none; transition:transform 0.2s ease, box-shadow 0.2s ease;"
+   onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 6px 28px rgba(37,211,102,0.6)'"
+   onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 20px rgba(37,211,102,0.45)'">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.533 5.845L.057 23.5l5.752-1.508A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.012-1.376l-.36-.214-3.714.974.993-3.62-.234-.373A9.818 9.818 0 1112 21.818z"/>
+  </svg>
+</a>
+<!-- SEND INQUIRY MODAL -->
+<div id="sew-submit-modal"
+     style="display:none; position:fixed; inset:0; z-index:10000; background:rgba(4,9,26,0.92); backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:24px;">
+  <div style="background:#080f22; border:1px solid rgba(30,143,255,0.25); border-radius:16px; padding:40px 36px; max-width:420px; width:100%; box-shadow:0 0 60px rgba(30,143,255,0.15); text-align:center; position:relative;">
+    <button id="sew-modal-close" style="position:absolute; top:16px; right:20px; background:none; border:none; color:#7a90b0; font-size:22px; cursor:pointer; line-height:1;">&#x2715;</button>
+    <div style="width:56px; height:56px; border-radius:50%; background:rgba(30,143,255,0.1); border:1px solid rgba(30,143,255,0.3); display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e8fff" stroke-width="2" stroke-linecap="round">
+        <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/>
+      </svg>
+    </div>
+    <h3 style="font-family:'Rajdhani',sans-serif; color:#f0f4ff; font-size:1.5rem; font-weight:700; margin:0 0 8px;">Send Your Inquiry</h3>
+    <p style="color:#7a90b0; font-size:0.9rem; margin:0 0 28px; line-height:1.6;">Choose how to send your message to<br><strong style="color:#94a3b8;">Shanthi Engineering Works</strong></p>
+    <a id="sew-mailto-btn" href="#" target="_blank"
+       style="display:flex; align-items:center; justify-content:center; gap:12px; width:100%; padding:14px 20px; border-radius:10px; margin-bottom:12px; background:rgba(30,143,255,0.1); border:1px solid rgba(30,143,255,0.3); color:#f0f4ff; text-decoration:none; font-size:0.95rem; font-family:'Rajdhani',sans-serif; font-weight:600; letter-spacing:0.5px; transition:all 0.2s ease;"
+       onmouseover="this.style.background='rgba(30,143,255,0.2)'; this.style.borderColor='rgba(30,143,255,0.6)'"
+       onmouseout="this.style.background='rgba(30,143,255,0.1)'; this.style.borderColor='rgba(30,143,255,0.3)'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e8fff" stroke-width="2" stroke-linecap="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/>
+      </svg>
+      Send via Email
+    </a>
+    <a id="sew-wa-btn" href="#" target="_blank"
+       style="display:flex; align-items:center; justify-content:center; gap:12px; width:100%; padding:14px 20px; border-radius:10px; background:rgba(37,211,102,0.1); border:1px solid rgba(37,211,102,0.3); color:#f0f4ff; text-decoration:none; font-size:0.95rem; font-family:'Rajdhani',sans-serif; font-weight:600; letter-spacing:0.5px; transition:all 0.2s ease;"
+       onmouseover="this.style.background='rgba(37,211,102,0.2)'; this.style.borderColor='rgba(37,211,102,0.6)'"
+       onmouseout="this.style.background='rgba(37,211,102,0.1)'; this.style.borderColor='rgba(37,211,102,0.3)'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.533 5.845L.057 23.5l5.752-1.508A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.012-1.376l-.36-.214-3.714.974.993-3.62-.234-.373A9.818 9.818 0 1112 21.818z"/>
+      </svg>
+      Send via WhatsApp
+    </a>
+    <p style="color:#4a5568; font-size:0.78rem; margin:20px 0 0;">No account required &middot; Zero data shared with third parties</p>
+  </div>
+</div>
+
+</body>
+</html>
