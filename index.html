@@ -422,7 +422,7 @@ footer {
         <circle cx="210" cy="160" r="3" fill="#00d4ff" opacity="0.5"/>
       </svg>
     </div>
-    <div class="hero-tag">Est. 30+ Years of Excellence</div>
+    <div class="hero-tag">30+ Years of Excellence</div>
     <h1>Shanthi Engineering Works</h1>
     <div class="hero-tagline">Innovating RADAR Systems</div>
     <p class="hero-sub">Three Decades of Precision. Trusted by India's Defense &amp; Space Establishment.</p>
@@ -748,7 +748,7 @@ footer {
   <div style="max-width:1200px; margin:0 auto; padding:0 24px;">
     <div style="text-align:center; margin-bottom:60px;" class="animate">
       <span style="color:#1e8fff; font-family:'Rajdhani',sans-serif; font-size:13px; letter-spacing:4px; text-transform:uppercase;">Field Operations</span>
-      <h2 style="font-family:'Rajdhani',sans-serif; font-size:clamp(2rem,4vw,3rem); color:#f0f4ff; margin:12px 0 0; font-weight:700;">Projects Across Scope &amp; Terrains</h2>
+      <h2 style="font-family:'Rajdhani',sans-serif; font-size:clamp(2rem,4vw,3rem); color:#f0f4ff; margin:12px 0 0; font-weight:700;">Project Site Gallery</h2>
       <p style="color:#7a90b0; margin-top:16px; max-width:600px; margin-left:auto; margin-right:auto; font-size:1.05rem;">From high-altitude mountain deployments to naval vessel installations - real field operations across India's most demanding environments.</p>
     </div>
     <div style="display:flex; flex-direction:column; gap:24px;">
@@ -1237,6 +1237,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 })();
 </script>
+<style>
+#whatsapp-float { transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease, visibility 0.3s !important; }
+#whatsapp-float.wa-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+</style>
 <!-- WHATSAPP FLOAT BUTTON -->
 <a href="https://wa.me/919444456121?text=Hello%20Shanthi%20Engineering%20Works%2C%20I%20would%20like%20to%20enquire%20about%20your%20RADAR%20services."
    target="_blank" rel="noopener" id="whatsapp-float" aria-label="Chat on WhatsApp"
@@ -1248,6 +1252,17 @@ document.addEventListener('DOMContentLoaded', function() {
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.533 5.845L.057 23.5l5.752-1.508A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.012-1.376l-.36-.214-3.714.974.993-3.62-.234-.373A9.818 9.818 0 1112 21.818z"/>
   </svg>
 </a>
+<script>
+// Hide the WhatsApp float while the hero buttons are visible so it never covers them.
+(function() {
+  var wa = document.getElementById('whatsapp-float');
+  var btns = document.querySelector('.hero-btns');
+  if (!wa || !btns || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(entries) {
+    wa.classList.toggle('wa-hidden', entries[0].isIntersecting);
+  }).observe(btns);
+})();
+</script>
 <!-- SEND INQUIRY MODAL -->
 <div id="sew-submit-modal"
      style="display:none; position:fixed; inset:0; z-index:10000; background:rgba(4,9,26,0.92); backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:24px;">
