@@ -241,7 +241,10 @@ section { padding: 5rem 1.5rem; }
 .project-visual { height: 200px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); position: relative; overflow: hidden; }
 .project-body { padding: 1.3rem; }
 .project-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
-.project-visual:has(.project-photo)::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 55%, rgba(8,15,34,0.85)); }
+.project-visual:has(.project-photo)::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 55%, rgba(8,15,34,0.85)); pointer-events: none; }
+.project-photo { cursor: zoom-in; }
+.project-visual:has(.project-photo)::before { content: ""; position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; border-radius: 8px; background: rgba(4,9,26,0.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f0f4ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 4l4 0l0 4'/%3E%3Cpath d='M14 10l6 -6'/%3E%3Cpath d='M8 20l-4 0l0 -4'/%3E%3Cpath d='M4 20l6 -6'/%3E%3Cpath d='M16 20l4 0l0 -4'/%3E%3Cpath d='M14 14l6 6'/%3E%3Cpath d='M8 4l-4 0l0 4'/%3E%3Cpath d='M4 4l6 6'/%3E%3C/svg%3E") center / 18px no-repeat; z-index: 1; pointer-events: none; }
+#lightbox-img { min-width: min(600px, 94vw); object-fit: contain; }
 .terrain-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent-cyan); border: 1px solid rgba(0,212,255,0.3); padding: 0.2rem 0.6rem; border-radius: 2px; margin-bottom: 0.6rem; background: rgba(0,212,255,0.06); }
 .project-body h3 { font-size: 1rem; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .project-body p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
@@ -614,7 +617,7 @@ footer {
 
       <div class="project-card animate">
         <div class="project-visual">
-          <img class="project-photo" src="images/project-lighthouse.webp" alt="RADAR antenna being lifted by crane onto a coastal lighthouse" loading="lazy" style="object-position:center 30%">
+          <img class="project-photo" src="images/project-lighthouse.webp" data-full="images/project-lighthouse-full.webp" alt="RADAR antenna being lifted by crane onto a coastal lighthouse" loading="lazy" style="object-position:center 30%">
         </div>
         <div class="project-body">
           <span class="terrain-badge">Coastal</span>
@@ -1177,6 +1180,31 @@ document.addEventListener('DOMContentLoaded', function() {
   new IntersectionObserver(function(entries) {
     wa.classList.toggle('wa-hidden', entries[0].isIntersecting);
   }).observe(btns);
+})();
+</script>
+<script>
+// project-photo-viewer: tap a project card photo to see it uncropped in the existing lightbox.
+(function() {
+  var box = document.getElementById('sew-lightbox');
+  var big = document.getElementById('lightbox-img');
+  if (!box || !big) return;
+  document.querySelectorAll('.project-photo').forEach(function(img) {
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('role', 'button');
+    img.setAttribute('aria-label', 'View full photo: ' + img.alt);
+    function open() {
+      big.src = img.getAttribute('data-full') || img.src;
+      big.alt = img.alt;
+      box.style.display = 'flex';
+    }
+    img.addEventListener('click', open);
+    img.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') box.style.display = 'none';
+  });
 })();
 </script>
 <!-- SEND INQUIRY MODAL -->
